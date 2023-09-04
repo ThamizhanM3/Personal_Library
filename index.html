@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="main-container">
+        <div class="buttons">
+            <h2>Perosnal Library</h2>
+            <div class="col">
+                <button onclick="addBookContainer()">Add Book</button>
+                <button onclick="getAllTitlesContainer()">Get Titles</button>
+                <button onclick="removeLastBook()">Remove Last Book</button>
+            </div>
+            <div class="col">
+                <button onclick="addBookToFrontContainer()">Add Book to Front</button>
+                <button onclick="removeFirstBook()">Remove First Book</button>
+                <button onclick="getBookByAuthorContainer()">Get Book by Author</button>
+            </div>
+            <div class="col">
+                <button onclick="getTotalBooksPublishedBeforeContainer()">Get Total Books Published Before the Year</button>
+                <button onclick="removeBookByTitleContainer()">Remove by Title</button>
+                <button onclick="getBookByReadStatusContainer()">Get Books By Read Status</button>
+            </div>
+        </div>
+    </div>
+    <div class="add-book-container" id="add-book-container">
+        <form action="#">
+            <table>
+                <tr>
+                    <td>Give Title of the Book</td>
+                    <td><input type="text" name="" id="title"></td>
+                </tr>
+                <tr>
+                    <td>Give Author of the Book</td>
+                    <td><input type="text" name="" id="author"></td>
+                </tr>
+                <tr>
+                    <td>Give the year of publication of the Book</td>
+                    <td><input type="text" name="" id="year"></td>
+                </tr>
+                <tr>
+                    <td>Have you read the Book</td>
+                    <td><input type="checkbox" name="" id="status"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+        <div class="buttons">
+            <div class="col">
+                <button onclick="addBook()">Submit</button>
+                <button onclick="mainContainer('add-book-container')">Back to Main Page</button>
+            </div>
+        </div>
+    </div>
+    <div class="get-all-titles-container" id="get-all-titles-container">
+        <div class="titles" id="titles">
+        </div>
+        <button onclick="mainContainer('get-all-titles-container')" id="return-from-title">Back to Main Page</button>
+    </div>
+    <div class="remove-last-book-container" id="remove-last-book-container">
+        <h3>Last Book in the Library has been removed</h3>
+        <button onclick="mainContainer('remove-last-book-container')" id="return-from-title">Back to Main Page</button>
+    </div>
+    <div class="add-book-to-front-container" id="add-book-to-front-container">
+        <form action="#">
+            <table>
+                <tr>
+                    <td>Give Title of the Book</td>
+                    <td><input type="text" name="" id="title-f"></td>
+                </tr>
+                <tr>
+                    <td>Give Author of the Book</td>
+                    <td><input type="text" name="" id="author-f"></td>
+                </tr>
+                <tr>
+                    <td>Give the year of publication of the Book</td>
+                    <td><input type="text" name="" id="year-f"></td>
+                </tr>
+                <tr>
+                    <td>Have you read the Book</td>
+                    <td><input type="checkbox" name="" id="status-f"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+        <div class="buttons">
+            <div class="col">
+                <button onclick="addBookToFront()">Submit</button>
+                <button onclick="mainContainer('add-book-to-front-container')">Back to Main Page</button>
+            </div>
+        </div>
+    </div>
+    <div class="remove-first-book-container" id="remove-first-book-container">
+        <h3>First Book in the Library has been removed</h3>
+        <button onclick="mainContainer('remove-first-book-container')" id="return-from-title">Back to Main Page</button>
+    </div>
+    <div class="get-book-by-author-container" id="get-book-by-author-container">
+        <form action="#">
+            <table>
+                <tr>
+                    <td>Give Name of Author</td>
+                    <td><input type="text" name="" id="author-get"></td>
+                </tr>
+            </table>
+        </form>
+        <div class="buttons">
+            <div class="col">
+                <button onclick="getBooksByAuthor()">Submit</button>
+                <button onclick="mainContainer('get-book-by-author-container')">Back to Main Page</button>
+            </div>
+        </div>
+    </div>
+    <div class="get-book-by-author-display-container" id="get-book-by-author-display-container">
+        <div class="authors-display" id="authors-display">
+        </div>
+        <button onclick="mainContainer('get-book-by-author-display-container')" id="return-from-authors">Back to Main Page</button>
+    </div>
+    <div class="get-total-books-published-before-container" id="get-total-books-published-before-container">
+        <form action="#">
+            <table>
+                <tr>
+                    <td>Give the year to search</td>
+                    <td><input type="text" name="" id="year-get"></td>
+                </tr>
+            </table>
+        </form>
+        <div class="buttons">
+            <div class="col">
+                <button onclick="getTotalBooksPublishedBefore()">Submit</button>
+                <button onclick="mainContainer('get-total-books-published-before-container')">Back to Main Page</button>
+            </div>
+        </div>
+    </div>
+    <div class="get-total-books-published-before-display-container" id="get-total-books-published-before-display-container">
+        <div class="year-display" id="year-display">
+        </div>
+        <button onclick="mainContainer('get-total-books-published-before-display-container')" id="return-from-year">Back to Main Page</button>
+    </div>
+    <div class="remove-book-by-title-container" id="remove-book-by-title-container">
+        <form action="#">
+            <table>
+                <tr>
+                    <td>Give title of book to remove</td>
+                    <td><input type="text" name="" id="title-get"></td>
+                </tr>
+            </table>
+        </form>
+        <div class="buttons">
+            <div class="col">
+                <button onclick="removeBookByTitle()">Submit</button>
+                <button onclick="mainContainer('remove-book-by-title-container')">Back to Main Page</button>
+            </div>
+        </div>
+    </div>
+    <div class="remove-book-by-title-display-container" id="remove-book-by-title-display-container">
+        <h3>The given Book in the Library has been removed</h3>
+        <button onclick="mainContainer('remove-book-by-title-display-container')" id="return-from-title">Back to Main Page</button>
+    </div>
+    <div class="get-book-by-read-status-container" id="get-book-by-read-status-container">
+        <form action="#">
+            <table>
+                <tr>
+                    <td>Give status to search</td>
+                    <td><input type="checkbox" name="" id="status-get"></td>
+                </tr>
+            </table>
+        </form>
+        <div class="buttons">
+            <div class="col">
+                <button onclick="getBooksByReadStatus()">Submit</button>
+                <button onclick="mainContainer('get-book-by-read-status-container')">Back to Main Page</button>
+            </div>
+        </div>
+    </div>
+    <div class="get-book-by-read-status-display-container" id="get-book-by-read-status-display-container">
+        <div class="status-display" id="status-display">
+        </div>
+        <button onclick="mainContainer('get-book-by-read-status-display-container')" id="return-from-status">Back to Main Page</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
